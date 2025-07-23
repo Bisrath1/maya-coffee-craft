@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Coffee, Calendar, Truck, Gift, Pause, Skip, X, Settings } from 'lucide-react';
+import { Coffee, Calendar, Truck, Gift, Pause, SkipForward, X, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -206,7 +206,7 @@ const Subscriptions = () => {
             </div>
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-                <Skip className="h-8 w-8 text-blue-600" />
+                <SkipForward className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="font-serif font-semibold text-lg mb-2">Skip Deliveries</h3>
               <p className="text-muted-foreground text-sm">
