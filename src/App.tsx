@@ -1,50 +1,52 @@
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
-import { CartProvider } from "@/contexts/CartContext";
-import TopBanner from "@/components/Home/TopBanner";
-import Header from "@/components/Layout/Header";
-import Footer from "@/components/Layout/Footer";
-import CartSidebar from "@/components/Cart/CartSidebar";
-import Index from "./pages/Index";
-import Shop from "./pages/Shop";
-import ProductDetail from "./pages/ProductDetail";
-import NotFound from "./pages/NotFound";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { CartProvider } from './contexts/CartContext';
+import Header from './components/Layout/Header';
+import Footer from './components/Layout/Footer';
+import CartSidebar from './components/Cart/CartSidebar';
+import Index from './pages/Index';
+import Shop from './pages/Shop';
+import CoffeeBeans from './pages/CoffeeBeans';
+import BrewingEquipment from './pages/BrewingEquipment';
+import Gifts from './pages/Gifts';
+import Subscriptions from './pages/Subscriptions';
+import BrewGuides from './pages/BrewGuides';
+import OurStory from './pages/OurStory';
+import Sustainability from './pages/Sustainability';
+import ProductDetail from './pages/ProductDetail';
+import NotFound from './pages/NotFound';
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <CartProvider>
-          <BrowserRouter>
-            <div className="min-h-screen flex flex-col">
-              <TopBanner />
-              <Header />
-              <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/shop" element={<Shop />} />
-                  <Route path="/product/:id" element={<ProductDetail />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </main>
-              <Footer />
-              <CartSidebar />
-            </div>
-          </BrowserRouter>
-        </CartProvider>
-        <Toaster />
-        <Sonner />
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
-);
+function App() {
+  return (
+    <HelmetProvider>
+      <CartProvider>
+        <Router>
+          <div className="min-h-screen bg-background">
+            <Header />
+            <main>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/coffee" element={<CoffeeBeans />} />
+                <Route path="/equipment" element={<BrewingEquipment />} />
+                <Route path="/gifts" element={<Gifts />} />
+                <Route path="/subscriptions" element={<Subscriptions />} />
+                <Route path="/brew-guides" element={<BrewGuides />} />
+                <Route path="/our-story" element={<OurStory />} />
+                <Route path="/sustainability" element={<Sustainability />} />
+                <Route path="/product/:id" element={<ProductDetail />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+            <CartSidebar />
+          </div>
+        </Router>
+      </CartProvider>
+    </HelmetProvider>
+  );
+}
 
 export default App;
