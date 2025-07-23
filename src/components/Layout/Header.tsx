@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, ShoppingCart, Menu, X, Coffee } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, Coffee, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useCart } from '@/contexts/CartContext';
@@ -18,9 +17,9 @@ const Header = () => {
     { name: 'Shop', href: '/shop' },
     { name: 'Subscriptions', href: '/subscriptions' },
     { name: 'Brew Guides', href: '/brew-guides' },
-    { name: 'Our Story', href: '/story' },
+    { name: 'Our Story', href: '/our-story' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Support', href: '/support' },
+    { name: 'Help', href: '/help' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -78,20 +77,28 @@ const Header = () => {
               )}
             </div>
 
+            {/* Account */}
+            <Link to="/account">
+              <Button variant="ghost" size="icon" className="hover:bg-accent">
+                <User className="h-5 w-5" />
+              </Button>
+            </Link>
+
             {/* Cart */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => dispatch({ type: 'TOGGLE_CART' })}
-              className="relative hover:bg-accent"
-            >
-              <ShoppingCart className="h-5 w-5" />
-              {cartState.itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                  {cartState.itemCount}
-                </span>
-              )}
-            </Button>
+            <Link to="/cart">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative hover:bg-accent"
+              >
+                <ShoppingCart className="h-5 w-5" />
+                {cartState.itemCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                    {cartState.itemCount}
+                  </span>
+                )}
+              </Button>
+            </Link>
 
             {/* Mobile menu button */}
             <Button

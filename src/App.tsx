@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -17,6 +16,12 @@ import OurStory from './pages/OurStory';
 import Sustainability from './pages/Sustainability';
 import ProductDetail from './pages/ProductDetail';
 import NotFound from './pages/NotFound';
+import Blog from './pages/Blog';
+import Help from './pages/Help';
+import Account from './pages/Account';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Subscribe from './pages/Subscribe';
 
 function App() {
   return (
@@ -36,6 +41,12 @@ function App() {
                 <Route path="/brew-guides" element={<BrewGuides />} />
                 <Route path="/our-story" element={<OurStory />} />
                 <Route path="/sustainability" element={<Sustainability />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/help" element={<Help />} />
+                <Route path="/account" element={<Account />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/subscribe" element={<Subscribe />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
