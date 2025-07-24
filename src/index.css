@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,23 +11,23 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 249 247 244;
-    --foreground: 91 75 55;
+    --background: 252 251 249;
+    --foreground: 64 49 31;
 
     --card: 255 255 255;
-    --card-foreground: 91 75 55;
+    --card-foreground: 64 49 31;
 
     --popover: 255 255 255;
-    --popover-foreground: 91 75 55;
+    --popover-foreground: 64 49 31;
 
-    --primary: 128 98 63;
+    --primary: 30 25 13;
     --primary-foreground: 255 255 255;
 
     --secondary: 156 168 126;
     --secondary-foreground: 255 255 255;
 
     --muted: 249 247 244;
-    --muted-foreground: 107 91 71;
+    --muted-foreground: 128 98 63;
 
     --accent: 156 168 126;
     --accent-foreground: 255 255 255;
@@ -38,6 +38,12 @@ All colors MUST be HSL.
     --border: 234 229 220;
     --input: 234 229 220;
     --ring: 128 98 63;
+
+    /* Brand Colors */
+    --earthy-brown: 128 98 63;
+    --olive-green: 156 168 126;
+    --cream: 252 251 249;
+    --rustic-brown: 91 75 55;
 
     --radius: 0.5rem;
   }
@@ -86,9 +92,20 @@ All colors MUST be HSL.
     @apply font-serif;
   }
   
+  .script-font {
+    font-family: 'Dancing Script', cursive;
+  }
+  
   .coffee-texture {
     background-image: radial-gradient(circle at 1px 1px, rgba(245,243,240,0.3) 1px, transparent 0);
     background-size: 20px 20px;
+  }
+  
+  .rustic-texture {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--earthy-brown) / 0.1) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, hsl(var(--olive-green) / 0.05) 1px, transparent 1px);
+    background-size: 40px 40px, 60px 60px;
   }
 }
 
@@ -106,10 +123,28 @@ All colors MUST be HSL.
   }
   
   .hero-text {
-    @apply text-hero font-serif font-light text-coffee-bean leading-tight;
+    @apply text-hero font-serif font-light leading-tight;
+    color: hsl(var(--earthy-brown));
   }
   
   .display-text {
-    @apply text-display font-serif font-normal text-coffee-bean;
+    @apply text-display font-serif font-normal;
+    color: hsl(var(--earthy-brown));
+  }
+  
+  .script-headline {
+    font-family: 'Dancing Script', cursive;
+    @apply text-6xl font-semibold;
+    color: hsl(var(--olive-green));
+  }
+  
+  .brand-pattern {
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 8px,
+      hsl(var(--olive-green) / 0.1) 8px,
+      hsl(var(--olive-green) / 0.1) 9px
+    );
   }
 }
