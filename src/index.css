@@ -11,65 +11,65 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 30 33% 96%;
-    --foreground: 30 31% 22%;
+    --background: 249 247 244;
+    --foreground: 91 75 55;
 
-    --card: 0 0% 100%;
-    --card-foreground: 30 31% 22%;
+    --card: 255 255 255;
+    --card-foreground: 91 75 55;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 30 31% 22%;
+    --popover: 255 255 255;
+    --popover-foreground: 91 75 55;
 
-    --primary: 30 31% 38%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 128 98 63;
+    --primary-foreground: 255 255 255;
 
-    --secondary: 80 20% 49%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 156 168 126;
+    --secondary-foreground: 255 255 255;
 
-    --muted: 30 33% 96%;
-    --muted-foreground: 30 20% 30%;
+    --muted: 249 247 244;
+    --muted-foreground: 107 91 71;
 
-    --accent: 30 33% 93%;
-    --accent-foreground: 30 31% 38%;
+    --accent: 245 243 240;
+    --accent-foreground: 128 98 63;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 20% 85%;
-    --input: 30 20% 85%;
-    --ring: 30 31% 38%;
+    --border: 234 229 220;
+    --input: 234 229 220;
+    --ring: 128 98 63;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 30 31% 22%;
-    --foreground: 30 33% 96%;
+    --background: 91 75 55;
+    --foreground: 249 247 244;
 
-    --card: 30 20% 30%;
-    --card-foreground: 30 33% 96%;
+    --card: 107 91 71;
+    --card-foreground: 249 247 244;
 
-    --popover: 30 20% 30%;
-    --popover-foreground: 30 33% 96%;
+    --popover: 107 91 71;
+    --popover-foreground: 249 247 244;
 
-    --primary: 30 31% 50%;
-    --primary-foreground: 30 31% 22%;
+    --primary: 166 124 82;
+    --primary-foreground: 91 75 55;
 
-    --secondary: 80 20% 40%;
-    --secondary-foreground: 30 33% 96%;
+    --secondary: 122 132 101;
+    --secondary-foreground: 249 247 244;
 
-    --muted: 30 20% 30%;
-    --muted-foreground: 30 20% 70%;
+    --muted: 107 91 71;
+    --muted-foreground: 195 185 170;
 
-    --accent: 30 31% 38%;
-    --accent-foreground: 30 33% 96%;
+    --accent: 128 98 63;
+    --accent-foreground: 249 247 244;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 31% 38%;
-    --input: 30 31% 38%;
-    --ring: 30 31% 50%;
+    --border: 128 98 63;
+    --input: 128 98 63;
+    --ring: 166 124 82;
   }
 }
 
@@ -94,11 +94,11 @@ All colors MUST be HSL.
 
 @layer components {
   .btn-primary {
-    @apply bg-coffee-bean text-coffee-cream hover:bg-coffee-roasted transition-all duration-200 hover:scale-105;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-200;
   }
   
   .btn-secondary {
-    @apply bg-earth-green text-white hover:bg-earth-sage transition-all duration-200 hover:scale-105;
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors duration-200;
   }
   
   .container-wide {
@@ -106,40 +106,10 @@ All colors MUST be HSL.
   }
   
   .hero-text {
-    @apply text-hero font-serif font-light text-white leading-tight;
+    @apply text-hero font-serif font-light text-coffee-bean leading-tight;
   }
   
   .display-text {
-    @apply text-display font-serif font-normal text-foreground;
+    @apply text-display font-serif font-normal text-coffee-bean;
   }
-  
-  .link-hover {
-    @apply transition-colors duration-200 hover:text-secondary;
-  }
-  
-  .star-rating {
-    @apply text-rating-star;
-  }
-  
-  .interactive-element {
-    @apply hover:text-secondary focus:text-secondary transition-colors duration-200;
-  }
-}
-
-/* Custom scrollbar for modern look */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--muted));
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--primary));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--secondary));
 }

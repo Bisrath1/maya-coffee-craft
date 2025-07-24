@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -23,7 +22,6 @@ import Account from './pages/Account';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Subscribe from './pages/Subscribe';
-import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -49,7 +47,6 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/subscribe" element={<Subscribe />} />
-                <Route path="/contact" element={<Contact />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
