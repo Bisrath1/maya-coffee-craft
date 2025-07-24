@@ -72,10 +72,10 @@ const Shop = () => {
       {/* Header */}
       <div className="bg-white border-b">
         <div className="container-wide py-8">
-          <h1 className="display-text mb-4">Coffee Shop</h1>
+          <h1 className="display-text mb-4">Our Coffee Collection</h1>
           <p className="text-lg text-muted-foreground">
             Discover our premium collection of single-origin coffee beans, 
-            brewing equipment, and curated gift sets.
+            brewing equipment, and curated gift sets with intelligent search and filtering.
           </p>
         </div>
       </div>

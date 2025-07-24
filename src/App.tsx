@@ -5,6 +5,7 @@ import { CartProvider } from './contexts/CartContext';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import CartSidebar from './components/Cart/CartSidebar';
+import LanguageCurrencyToggle from './components/Layout/LanguageCurrencyToggle';
 import Index from './pages/Index';
 import Shop from './pages/Shop';
 import CoffeeBeans from './pages/CoffeeBeans';
@@ -22,6 +23,7 @@ import Account from './pages/Account';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Subscribe from './pages/Subscribe';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -47,12 +49,14 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/subscribe" element={<Subscribe />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />
             <CartSidebar />
+            <LanguageCurrencyToggle />
           </div>
         </Router>
       </CartProvider>
