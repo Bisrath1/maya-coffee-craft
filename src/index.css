@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -11,10 +10,10 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 249 247 244;
+    --background: 240 20% 98%; /* Creamy, warm off-white to replace pinkish tint */
     --foreground: 91 75 55;
 
-    --card: 255 255 255;
+    --card: 240 20% 96%; /* Slightly darker cream for cards */
     --card-foreground: 91 75 55;
 
     --popover: 255 255 255;
@@ -79,7 +78,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans transition-all duration-1000 hover:bg-[hsl(240_20%_97%)];
   }
   
   h1, h2, h3 {
@@ -111,5 +110,13 @@ All colors MUST be HSL.
   
   .display-text {
     @apply text-display font-serif font-normal text-coffee-bean;
+  }
+  
+  .bg-cream {
+    @apply bg-gradient-to-br from-background to-muted/10 transition-all duration-1000 hover:bg-gradient-to-br hover:from-[hsl(240_20%_97%)] hover:to-secondary/20;
+  }
+  
+  .card {
+    @apply bg-card transition-all duration-1000 hover:bg-[hsl(240_20%_95%)] hover:scale-[1.02];
   }
 }

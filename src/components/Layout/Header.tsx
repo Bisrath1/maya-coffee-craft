@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, ShoppingCart, Menu, X, Coffee, User } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useCart } from '@/contexts/CartContext';
@@ -30,7 +30,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Coffee className="h-8 w-8 text-primary" />
+            <img src="/Maya_logo.png" alt="Maya Coffee Logo" className="h-8 w-auto" />
             <span className="text-2xl font-serif font-semibold text-coffee-bean">
               Maya Coffee
             </span>
